@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<%@ include file="/WEB-INF/views/include/include-head.jsp"%>
+
+<style>
+section {
+	margin: 10px;
+}
+
+
+
+/* 어떤 tag에 마우스를 올렸을때의 효과 지정*/
+#order_input:hover{
+background-color: gray;
+color: black;
+border-bottom: 2px solid yellow;
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+
+	<%@ include file="/WEB-INF/views/include/include-header.jspf"%>
+	<%@ include file="/WEB-INF/views/include/include-nav.jspf"%>
+
+
+
+	<section>
+
+	<h3>주문서 입력화면</h3>
+	<form  method="POST">
+    <input name="o_num" placeholder="주문번호 입력하세요"><br/>
+    <input name="o_date" placeholder="날짜를 입력하세요"><br/>
+    <input name="o_cnum" placeholder="고객번호를 입력하세요"><br/>
+    <input name="o_pcode" placeholder="상품번호를 입력하세요"><br/>
+    <input name="o_price" placeholder="가격를 입력하세요"><br/>
+    <input name="o_qty" placeholder="수량를 입력하세요"><br/>
+    <button>보내기</button>
+	</form>
+	</section>
+	<hr/>
+	
+	
+	
+	
+
+<%@ include file="/WEB-INF/views/include/include-footer.jsp"%>
+
+
+
+
+</body>
