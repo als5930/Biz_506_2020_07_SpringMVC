@@ -17,4 +17,4 @@ Controller에서 처리할때는 지정된의 처리가 표현된 함수가 처�
 ## Request, Response
 * Req_1 (a href="input") == Res_1 ( write.jsp)
 * Req_2(write.jsp, form, input, button click) ==> Controller ==>write(String title, String content)
-* Res_2(write 함수에서 model에 model에 TITLE, CONTENT attribute를 설정하고, view.jsp롸 Rendering ==> html코드를 보내주기
+* Res_2(write 함수에서 model에 model에 TITLE, CONTENT attribute를 설정하고, view.jsp와 Rendering ==> html코드를 보내주기
