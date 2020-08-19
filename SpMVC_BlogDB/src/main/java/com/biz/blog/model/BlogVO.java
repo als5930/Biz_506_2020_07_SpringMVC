@@ -11,11 +11,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class BlogVO {
-	
-	
-	
+
 	private long bl_seq;
 	private String bl_user;
 	private String bl_title;

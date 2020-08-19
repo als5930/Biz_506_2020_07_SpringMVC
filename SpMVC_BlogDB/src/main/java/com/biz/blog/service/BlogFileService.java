@@ -45,7 +45,8 @@ public class BlogFileService {
 		Path path = null;
 		try {
 		
-			System.out.println("서버 rootPath : " + this.serverRootPath);
+			System.out.println("서버 rootPath : " 
+					+ this.serverRootPath);
 			// 서버의 root path와 blog파일 이름을 묶어서
 			// 파일관련 연산을 수행할때 사용할 file 객체 생성
 			File file = new File(this.serverRootPath,blogFile);
@@ -104,7 +105,7 @@ public class BlogFileService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		System.out.println("저장완료");
 	}
 	
 	

@@ -14,7 +14,7 @@
 	<section id="main">
 		<article id="button">
 			<button>
-				<a href="${rootPath}/blog/list">블로그작성</a>
+				<a href="${rootPath}/blog/list">블로그</a>
 			</button>
 		</article>
 		<article id="blog_body">

@@ -10,4 +10,4 @@
 			type="com.biz.blog.model.BlogVO" 
 			alias="BlogVO"/>
 	</typeAliases>
-	</configuration>
+</configuration>	
