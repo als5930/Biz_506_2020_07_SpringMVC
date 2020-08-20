@@ -5,14 +5,33 @@
   
  <mapper namespace="com.biz.shop.persistence.ProductDao">
  
- 	<select id="selectAll" resultType="productVO"></select>
- 	
- 	<!--  A query was run and no Result Maps were found for the Mapped Statement
- 	'com.biz.blog.dao.'  -->
-
+ 	<select id="selectAll" resultType="ProVO">
+ 		SELECT * FROM tbl_product
+ 	</select>
+ 	 	
  	<select id="findById"></select>
- 	<insert id="insert"></insert>
+ 	
+ 	<insert id="insert">
+ 		INSERT INTO tbl_product(
+	 		P_CODE,
+			P_NAME,
+			P_DCODE,
+			P_STD,
+			P_IPRICE,
+			P_OPRICE,
+			P_IMAGE
+ 		) VALUES (
+	 		#{p_code},
+			#{p_name},
+			#{p_dcode},
+			#{p_std},
+			#{p_iprice},
+			#{p_oprice},
+			#{p_image}
+ 		)
+ 	</insert>
+ 	
  	<update id="update"></update>
  	<delete id="delete"></delete>
  
- </mapper>
+ </mapper> 
