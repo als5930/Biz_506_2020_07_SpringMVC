@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.biz.com.shop.service.ProductService;
 import com.biz.shop.model.ProductVO;
 import com.biz.shop.persistence.ProductDao;
+import com.biz.shop.service.ProductService;
 
 import lombok.extern.slf4j.Slf4j;
 

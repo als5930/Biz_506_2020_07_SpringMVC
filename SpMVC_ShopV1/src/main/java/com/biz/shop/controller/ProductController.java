@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.biz.com.shop.service.ProductService;
 import com.biz.shop.model.ProductVO;
+import com.biz.shop.service.ProductService;
 
 import lombok.extern.slf4j.Slf4j;
 
