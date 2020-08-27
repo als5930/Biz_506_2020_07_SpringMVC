@@ -26,11 +26,11 @@
         	const d_code = $("#d_code").val();
 			const d_name = $("#d_name").val();
 			
-			if(p_code == ""){
+			if(d_code == ""){
 				
 				if(confirm("거래처코드는 반드시 필요합니다/n"
 						+"거래처코드를 생성할까요")){
-					getPCode()
+					getDCode()
 				}
 				return false
 			}
