@@ -72,7 +72,7 @@ public class DeptController {
 	public String detail(@RequestParam("id") String d_code, Model model) {
 		
 		DeptVO deptVO =dService.findByID(d_code);
-		model.addAttribute("DEPT",deptVO);
+		model.addAttribute("DEPT_VO",deptVO);
 		model.addAttribute("BODY","DEPT_DETAIL");
 		
 		return "home";
