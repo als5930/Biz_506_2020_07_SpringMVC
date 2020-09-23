@@ -1,3 +1,4 @@
+
 package com.biz.shop.controller;
 
 import java.util.List;
@@ -22,11 +23,10 @@ public class DeptController {
 	
 	@Autowired
 	@Qualifier("deptServiceV1")
-	private DeptService dService;
+	private DeptService dService;	
 
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String list(Model model) {
-		
 		
 		List<DeptVO> deptList = dService.selectAll();
 		model.addAttribute("DEPT_LIST",deptList);
@@ -34,47 +34,52 @@ public class DeptController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/insert",method=RequestMethod.GET)
+	@RequestMapping(value="/insert",method=RequestMethod.GET)
 	public ModelAndView insert(@ModelAttribute("DEPT_VO") DeptVO deptVO) {
 		
 		ModelAndView model = new ModelAndView();
-		
 		model.addObject("BODY","DEPT_WRITE");
 		model.setViewName("home");
 		return model;
-		
 	}
 	
-	@RequestMapping(value = "/insert",method=RequestMethod.POST)
-	public String insert(@ModelAttribute("DEPT_VO") DeptVO deptVO, Model model) {
-	
-		int ret = dService.insert(deptVO);
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	public String insert(@ModelAttribute("DEPT_VO") DeptVO deptVO,Model model) {
 		
-	return "redirect:/dept/";
+		int ret = dService.insert(deptVO);
+		return "redirect:/dept/";
+	
 	}
 	
 	/*
+	 * 
 	 * @ResponseBody
-	 * view를 rendering하지 않고 직접 값을 client로 전송하라
+	 * view를 rendering 하지 않고 직접 값을 client로 전송하라
 	 * return "D001" 문자열 D001을 client로 전송하라
+	 * 
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/get_dcode", method=RequestMethod.GET)
+	@RequestMapping(value="/get_dcode",method=RequestMethod.GET)
 	public String getDCode() {
-		
+
 		String d_code = dService.getDCode();
-		
-		return "d_code";
+		return d_code;
 		
 	}
 	
-	@RequestMapping(value = "/detail", method=RequestMethod.GET)
+	@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public String detail(@RequestParam("id") String d_code, Model model) {
 		
-		DeptVO deptVO =dService.findByID(d_code);
+		DeptVO deptVO = dService.findByID(d_code);
 		model.addAttribute("DEPT_VO",deptVO);
 		model.addAttribute("BODY","DEPT_DETAIL");
-		
 		return "home";
+	
 	}
+
+	
+	
+	
+	
+	
 }
