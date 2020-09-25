@@ -8,47 +8,49 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Read Book 2020</title>
-      <link href="${rootPath}/static/css/index.css?var=2020-09-24" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-latest.min.js?var=2020-09-24-000"></script>
+      <link href="${rootPath}/static/css/index.css?var=2020-09-25-002" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
     var rootPath ="${rootPath}"
     </script>
-		 <script src="${rootPath}/static/js/main-nav.js"></script>
+		 <script src="${rootPath}/static/js/main-nav.js?var=2020-09-25-007"></script>
   </head>
   <body>
-    <header>
+   <header>
       <h1>Read Book 2020</h1>
-      <h5>책속에 길이 있다네!! 정말로???</h5>
-    </header>
-    <nav id="main-nav">
+      <h5>책속에 길이 있다네!! 정말로??</h5>
+   </header>
+   <nav id="main-nav">
       <ul>
-        <li>Read Book</li>
-        <li>도서정보</li>
-        <li>독서록</li>
-        <li>네이버검색</li>
-        <li>회원가입</li>
-        <li>로그인</li>
-        <li>마이페이지</li>
-        <li>로그아웃</li>
+         <li id ="menu-home">Read Book</li>
+         <li id = "menu-books">도서정보</li>
+         <li id = "menu-read-book">독서록</li>
+         <li >네이버 검색</li>
+         <li id = "menu-join">회원가입</li>
+         <li id = "menu-login">로그인</li>
+         <li id = "menu-mypage">마이페이지</li>
+         <li id = "menu-logout">로그아웃</li>
       </ul>
-    </nav>
-    <section id="main-section">
-    <c:choose>
-    	<c:when test="${BODY == 'BOOK-LIST'}">
-    		<%@ include file="/WEB-INF/views/books/book-list.jsp" %>
-    	</c:when>
-    	<c:when test="${BODY == 'BOOK-WRITE'}">
-    		<%@ include file="/WEB-INF/views/books/book-write.jsp" %>
-    	</c:when>
-    	<c:when test="${BODY == 'BOOK-DETAIL'}">
-    		<%@ include file="/WEB-INF/views/books/book-detail.jsp" %>
-    	</c:when>
+   </nav>
+   <section id="main-section">
+      <c:choose>
+         <c:when test="${BODY == 'BOOK-LIST'}">
+            <%@ include file="/WEB-INF/views/books/book-list.jsp"%>
+         </c:when>
+
+         <c:when test="${BODY == 'BOOK-WRITE'}">
+            <%@ include file="/WEB-INF/views/books/book-write.jsp"%>
+         </c:when>
+
+         <c:when test="${BODY == 'BOOK-DETAIL'}">
+            <%@ include file="/WEB-INF/views/books/book-detail.jsp"%>
+         </c:when>
+
+         <c:otherwise>
+         <%@ include file="/WEB-INF/views/main-body.jsp" %>
+         </c:otherwise>
     	
     </c:choose>
-    
-    
- 
-    
     
     </section>
     <footer>

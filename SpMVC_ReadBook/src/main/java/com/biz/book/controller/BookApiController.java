@@ -60,7 +60,7 @@ public class BookApiController {
 	}
 	
 	@RequestMapping(value="/detail/{book_seq}" ,method=RequestMethod.GET,produces = "application/json;charset=utf8" )
-	   public String detail(
+	   public BookVO detail(
 	         @PathVariable("book_seq") String id, Model model) {
 	      
 	      log.debug("PATH : {}",id);
@@ -68,7 +68,7 @@ public class BookApiController {
 	      BookVO bookVO = bookDao.findById(seq);
 	      // log.debug(bookVO.toString());
 	      
-	      return "books/book-detail" ;
+	      return bookVO ;
 	      
 	   }
 	
