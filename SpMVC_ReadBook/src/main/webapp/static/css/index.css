@@ -74,6 +74,16 @@ nav#main-nav {
   background-color: skyblue;
 }
 
+/* button이 가지고있는 고유한 모양을 모두 제거*/
+#main-nav button{
+	background: transparent;
+	color: white;
+	border:0;
+	outline: none;
+	font-size: 17px;
+	cursor: pointer;
+}
+
 section#main-section {
   height: 1000px;
 }

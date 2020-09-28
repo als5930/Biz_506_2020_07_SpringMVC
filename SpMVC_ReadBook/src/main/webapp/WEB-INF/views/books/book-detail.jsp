@@ -43,7 +43,7 @@
 		text-align: left;
 		padding:10px 30px;
 		color: purple;
-		background-color: orange; 
+		background-color: skyblue; 
 	}
 	
 	table#book-detail .desc td{
@@ -53,10 +53,16 @@
 	
 	table#book-detail .link th,
 	table#book-detail .link td{
-		background-color: gold;
+		background-color: skyblue;
 		padding: 10px;
 		color: purple;
 		
+	}
+	
+	section#read-book-body{
+	width:60%;
+	border:1px solid green;
+	margin: 5px auto;
 	}
 
 </style>
@@ -88,6 +94,11 @@
 		|구입처 : ${BOOKVO.buystore}
 		</th>
 	</tr>
-	
-
 </table>
+<section id="read-book-body">
+	<%@ include file = "/WEB-INF/views/read-book/read-book-write.jsp" %>
+
+</section>
+
+
+
