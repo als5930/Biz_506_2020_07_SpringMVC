@@ -21,6 +21,10 @@
 		align-content: center;
 		padding: 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 	table#book-detail table th{
 		color: purple;
 		padding: 8px 12px;
@@ -42,7 +46,11 @@
 		text-align: left;
 		padding:10px 30px;
 		color: purple;
+<<<<<<< HEAD
 		background-color: orange; 
+=======
+		background-color: skyblue; 
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 	}
 	
 	table#book-detail .desc td{
@@ -52,11 +60,25 @@
 	
 	table#book-detail .link th,
 	table#book-detail .link td{
+<<<<<<< HEAD
 		background-color: gold;
+=======
+		background-color: skyblue;
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 		padding: 10px;
 		color: purple;
 		
 	}
+<<<<<<< HEAD
+=======
+	
+	section#read-book-body{
+	width:60%;
+	border:1px solid green;
+	margin: 5px auto;
+	}
+
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 </style>
 <table id="book-detail">
 	<tr class="title"><td colspan= "2"><h3>${BOOKVO.title}</h3></td></tr>
@@ -86,6 +108,17 @@
 		|구입처 : ${BOOKVO.buystore}
 		</th>
 	</tr>
+<<<<<<< HEAD
 	
 
 </table>
+=======
+</table>
+<section id="read-book-body">
+	<%@ include file = "/WEB-INF/views/read-book/read-book-write.jsp" %>
+
+</section>
+
+
+
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

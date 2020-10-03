@@ -2,12 +2,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
   
  <mapper namespace="com.biz.iolist.mapper.IolistDao">
+=======
+   <mapper namespace="com.biz.book.mapper.IolistDao">
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
  
  	<select id="selectAll" resultType="IolistVO">
  		SELECT * FROM tbl_iolist
  	</select>
+<<<<<<< HEAD
  	 	
  	<select id="findById" resultType="IolistVO">
  		SELECT * FROM tbl_iolist WHERE seq = #{seq}
@@ -54,3 +59,14 @@
  	</delete>
  
  </mapper> 
+=======
+ 	<select id="findById" resultType="IolistVO">
+ 		SELECT * FROM tbl_iolist WHERE seq = #{seq}
+ 	</select>
+ 	<insert id="insert"></insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 	
+ 	
+ 	 </mapper>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

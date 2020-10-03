@@ -1,6 +1,10 @@
 package com.biz.book.controller;
 
 import java.time.LocalDate;
+<<<<<<< HEAD
+=======
+import java.time.LocalDateTime;
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.book.mapper.BookDao;
 import com.biz.book.model.BookVO;
+import com.biz.book.model.ReadBookVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -76,12 +81,21 @@ public class BooksController {
 		return "redirect:/books";
 
 	}
+<<<<<<< HEAD
 	
 	// localhost:8080/book/books/detail/3 이라고 Request가 오면
 	// 맨 끝의 숫자 3을 Mapping 주소의 {book_seq}위치에 Mapping한다
 	// 매개변수에 설정된 PathVariable에 따라 String id 변수에
 	// 3의 값이 할당되어 method에 전달된다
 	
+=======
+	
+	// localhost:8080/book/books/detail/3 이라고 Request가 오면
+	// 맨 끝의 숫자 3을 Mapping 주소의 {book_seq}위치에 Mapping한다
+	// 매개변수에 설정된 PathVariable에 따라 String id 변수에
+	// 3의 값이 할당되어 method에 전달된다
+	
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 	@RequestMapping(value="/detail/{book_seq}" ,method=RequestMethod.GET,produces = "application/json;charset=utf8" )
 	   public String detail(
 	         @PathVariable("book_seq") String id, Model model) {
@@ -90,11 +104,29 @@ public class BooksController {
 	      long seq = Long.valueOf(id);
 	      BookVO bookVO = bookDao.findById(seq);
 	      // log.debug(bookVO.toString());
+<<<<<<< HEAD
 	      
 	      model.addAttribute("BOOKVO",bookVO);
+=======
+	      model.addAttribute("BOOKVO",bookVO);
+	      
+	      LocalDateTime lDateTime = LocalDateTime.now();
+	      String lDate = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(lDateTime);
+	      String lTime = DateTimeFormatter.ofPattern("HH:mm:SS").format(lDateTime);
+	      
+	      ReadBookVO readBookVO = ReadBookVO.builder()
+	    		  .r_date(lDate)
+	    		  .r_stime(lTime)
+	    		  .build();
+	      model.addAttribute("readBookVO",readBookVO);
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 	      model.addAttribute("BODY","BOOK-DETAIL");
 	      return "home" ;
 	      
 	   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

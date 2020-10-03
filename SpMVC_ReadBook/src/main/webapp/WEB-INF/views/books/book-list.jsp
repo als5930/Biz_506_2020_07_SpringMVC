@@ -9,7 +9,11 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>나의 홈페이지</title>
 <link href="${rootPath}/static/css/book-list.css?var=2020-09-24-007" rel="stylesheet">
+<<<<<<< HEAD
 <script src="${rootPath}/static/js/book-list.js?ver=2020-09-24-001"></script>
+=======
+<script src="${rootPath}/static/js/book-list.js?ver=2020-09-24-000"></script>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 </head>
 <body>
 <table id="book-list">

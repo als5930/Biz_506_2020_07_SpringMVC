@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -10,3 +11,6 @@
 		<typeAlias type="com.biz.iolist.model.IolistVO" alias="iolistVO"/>
 	</typeAliases>
 	</configuration>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

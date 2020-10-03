@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
       * {
         box-sizing: border-box;
@@ -56,3 +57,35 @@
         text-decoration: inherit;
       }
     
+=======
+@charset "UTF-8";
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+  border: 1px solid #aaa;
+  margin: 30px auto;
+}
+
+div#iolist-link-box {
+  width: 90%;
+  margin: 10px auto;
+  text-align: right;
+}
+
+div#iolist-link-box a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: violet;
+  color: purple;
+  text-decoration: none;
+
+  border-radius: 5px;
+}
+
+div#iolist-link-boxa:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
