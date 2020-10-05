@@ -1,4 +1,4 @@
-package com.biz.model;
+package com.biz.iolist.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,13 +16,13 @@ import lombok.ToString;
 public class IolistVO {
 
 	private Long seq;
-	private String IO_DATE;
-	private String IO_TIME;
-	private String IO_INPUT;
-	private String IO_PNAME;
-	private int IO_PRICE;
-	private int IO_QUAN;
-	private int IO_TOTAL;
+	private String io_date;
+	private String io_time;
+	private String io_input;
+	private String io_pname;
+	private int io_price;
+	private int io_quan;
+	private int io_total;
 
 	
 	
