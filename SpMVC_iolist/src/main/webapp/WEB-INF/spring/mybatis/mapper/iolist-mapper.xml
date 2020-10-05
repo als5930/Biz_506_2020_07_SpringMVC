@@ -2,124 +2,66 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<<<<<<< HEAD
 
-   <mapper namespace="com.biz.iolist.mapper.IolistDao">
 
-=======
-<<<<<<< HEAD
-  
- <mapper namespace="com.biz.iolist.mapper.IolistDao">
-=======
-   <mapper namespace="com.biz.book.mapper.IolistDao">
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
->>>>>>> 9f22fccf837c44d729604b9a02b66496b7c0f421
- 
- 	<select id="selectAll" resultType="IolistVO">
- 		SELECT * FROM tbl_iolist
- 	</select>
-<<<<<<< HEAD
+<mapper namespace="com.biz.iolist.mapper.IolistDao">
 
- 	 	
-=======
-<<<<<<< HEAD
- 	 	
- 	<select id="findById" resultType="IolistVO">
- 		SELECT * FROM tbl_iolist WHERE seq = #{seq}
- 	</select>
- 	
- 	<insert id="insert">
- 	INSERT INTO tbl_iolist(
-			 seq,
-			io_date,
-			io_time,
-			io_input,
-			io_pname,
-			io_price,
-			io_quan,
-			io_total
- 			) VALUES(
- 			SEQ_IOLIST.NEXTVAL,
-			#{io_date},
-			#{io_time},
-			#{io_input},
-			#{io_pname},
-			#{io_price},
-			#{io_quan},
-			#{io_total}			
- 				)
- 	</insert>
- 	
- 	<update id="update">
- 		UPDATE tbl_iolist SET	
-			io_date			=#{io_date},
-			io_time			=#{io_time}, 
-			io_input		=#{io_input}, 
-			io_pname		=#{io_pname}, 	 
-			io_price		=#{io_price}, 
-			io_quan			=#{io_quan}, 
-			io_total		=#{io_total} 
- 		   WHERE seq =  #{seq}
- 	
- 	
- 	</update>
- 	<delete id="delete">
- 			DELETE FROM tbl_iolist WHERE seq = #{seq}
- 	
- 	</delete>
- 
- </mapper> 
-=======
->>>>>>> 9f22fccf837c44d729604b9a02b66496b7c0f421
- 	<select id="findById" resultType="IolistVO">
- 		SELECT * FROM tbl_iolist WHERE seq = #{seq}
- 	</select>
- 	
- 	<insert id="insert">
- 	INSERT INTO tbl_iolist(
-			 seq,
-			io_date,
-			io_time,
-			io_input,
-			io_pname,
-			io_price,
-			io_quan,
-			io_total
- 			) VALUES(
- 			SEQ_IOLIST.NEXTVAL,
-			#{io_date},
-			#{io_time},
-			#{io_input},
-			#{io_pname},
-			#{io_price},
-			#{io_quan},
-			#{io_total}			
- 				)
- 	</insert>
- 	
-<<<<<<< HEAD
- 	<update id="update">
- 		UPDATE tbl_iolist SET	
-			io_date			=#{io_date},
-			io_time			=#{io_time}, 
-			io_input		=#{io_input}, 
-			io_pname		=#{io_pname}, 	 
-			io_price		=#{io_price}, 
-			io_quan			=#{io_quan}, 
-			io_total		=#{io_total} 
- 		   WHERE seq =  #{seq}
- 	
- 	
- 	</update>
- 	<delete id="delete">
- 			DELETE FROM tbl_iolist WHERE seq = #{seq}
- 	
- 	</delete>
- 
- </mapper> 
 
- 
-=======
- 	 </mapper>
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
->>>>>>> 9f22fccf837c44d729604b9a02b66496b7c0f421
+
+
+
+	<select id="selectAll" resultType="IolistVO">
+		SELECT * FROM tbl_iolist
+	</select>
+
+
+
+
+
+	<select id="findById" resultType="IolistVO">
+		SELECT * FROM tbl_iolist WHERE seq = #{seq}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO tbl_iolist(
+		seq,
+		io_date,
+		io_time,
+		io_input,
+		io_pname,
+		io_price,
+		io_quan,
+		io_total
+		) VALUES(
+		SEQ_IOLIST.NEXTVAL,
+		#{io_date},
+		#{io_time},
+		#{io_input},
+		#{io_pname},
+		#{io_price},
+		#{io_quan},
+		#{io_total}
+		)
+	</insert>
+
+	<update id="update">
+		UPDATE tbl_iolist SET
+		io_date =#{io_date},
+		io_time =#{io_time},
+		io_input =#{io_input},
+		io_pname =#{io_pname},
+		io_price =#{io_price},
+		io_quan =#{io_quan},
+		io_total =#{io_total}
+		WHERE seq = #{seq}
+
+
+	</update>
+	<delete id="delete">
+		DELETE FROM tbl_iolist WHERE seq = #{seq}
+
+	</delete>
+
+</mapper>
+
+
