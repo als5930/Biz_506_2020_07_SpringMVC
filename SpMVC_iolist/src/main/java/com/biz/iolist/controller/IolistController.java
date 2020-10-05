@@ -90,7 +90,11 @@ public class IolistController {
 	}
 	
 	 @RequestMapping(value = "/delete", method = RequestMethod.GET)
+<<<<<<< HEAD
 	    public String delete(@RequestParam("seq") Long seq) {
+=======
+	    public String delete(@RequestParam("id") Long seq) {
+>>>>>>> 9f22fccf837c44d729604b9a02b66496b7c0f421
 	        ioService.delete(seq);
 	        return "redirect:/list";
 	    }

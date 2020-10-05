@@ -22,6 +22,9 @@
 
 
 ## Spring Security와 별도로 DB정보(username, password) 암호화
+<<<<<<< HEAD
+* jasypt jasypt-spring Dependency
+=======
 * jasypt jasypt-spring Dependency
 
 
@@ -33,3 +36,4 @@
 * 평문을 암호화는 할수 있지만, 암호문을 평문으로 복호화 하는 도구룰 제공하지 않는다
 * 비번을 암호화 하여 저장하였을 경우, 사용자가 입력한 평문을 암호화 하여 저장된
   암호문과 비교하여 일치하는지 알아 낸다.
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

@@ -10,12 +10,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Read Book 2020</title>
+<<<<<<< HEAD
+      <link href="${rootPath}/static/css/index.css?var=2020-09-25-002" rel="stylesheet" />
+=======
       <link href="${rootPath}/static/css/index.css?var=2020-09-25-005" rel="stylesheet" />
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script>
     var rootPath ="${rootPath}"
     </script>
+<<<<<<< HEAD
+		 <script src="${rootPath}/static/js/main-nav.js?var=2020-09-25-007"></script>
+=======
 		 <script src="${rootPath}/static/js/main-nav.js?var=2020-09-25-010"></script>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
   </head>
   <body>
    <header>
@@ -28,6 +36,12 @@
          <li id = "menu-books">도서정보</li>
          <li id = "menu-read-book">독서록</li>
          <li >네이버 검색</li>
+<<<<<<< HEAD
+         <li id = "menu-join">회원가입</li>
+         <li id = "menu-login">로그인</li>
+         <li id = "menu-mypage">마이페이지</li>
+         <li id = "menu-logout">로그아웃</li>
+=======
          
          <sec:authorize access="isAnonymous()">
          <li id = "menu-join">회원가입</li>
@@ -40,6 +54,7 @@
          <sec:authorize access="hasRole('ADMIN')">
          <li>관리자</li>
          </sec:authorize>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
       </ul>
    </nav>
    <section id="main-section">
@@ -47,6 +62,17 @@
          <c:when test="${BODY == 'BOOK-LIST'}">
             <%@ include file="/WEB-INF/views/books/book-list.jsp"%>
          </c:when>
+<<<<<<< HEAD
+
+         <c:when test="${BODY == 'BOOK-WRITE'}">
+            <%@ include file="/WEB-INF/views/books/book-write.jsp"%>
+         </c:when>
+
+         <c:when test="${BODY == 'BOOK-DETAIL'}">
+            <%@ include file="/WEB-INF/views/books/book-detail.jsp"%>
+         </c:when>
+
+=======
 
          <c:when test="${BODY == 'BOOK-WRITE'}">
             <%@ include file="/WEB-INF/views/books/book-write.jsp"%>
@@ -59,6 +85,7 @@
          	<%@ include file ="/WEB-INF/views/member/member-write.jsp" %>
          </c:when>
 
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
          <c:otherwise>
          <%@ include file="/WEB-INF/views/main-body.jsp" %>
          </c:otherwise>
@@ -70,4 +97,8 @@
       <address>copyRight &copy; als3478@naver.com</address>
     </footer>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

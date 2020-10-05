@@ -6,6 +6,9 @@ import com.biz.blog.model.BlogVO;
 
 public interface BlogService {
 
+	
+	
+	
 	public List<BlogVO> selectAll();
 	
 	// PK칼럼을 대상으로 조회를 하면
