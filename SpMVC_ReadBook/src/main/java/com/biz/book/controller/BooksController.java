@@ -1,10 +1,7 @@
 package com.biz.book.controller;
 
 import java.time.LocalDate;
-<<<<<<< HEAD
-=======
 import java.time.LocalDateTime;
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -16,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.biz.book.mapper.BookDao;
 import com.biz.book.model.BookVO;
@@ -29,104 +25,92 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(value = "/books")
 public class BooksController {
 
-	@Autowired
-	private BookDao bookDao;
-	
-	@Transactional
-	// locatlhost:8080/book/books
-	// locatlhost:8080/book/books/
-	// @ResponseBody
-	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
-	public String list(Model model) {
+   @Autowired
+   private BookDao bookDao;
 
-		List<BookVO> bookList = bookDao.selectAll();
-		model.addAttribute("BOOKS", bookList);
-		model.addAttribute("BODY", "BOOK-LIST");
-		return "home";
-	}
+   @Transactional
+   // locatlhost:8080/book/books
+   // locatlhost:8080/book/books/
+   // @ResponseBody
+   @RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
+   public String list(Model model) {
 
-	@RequestMapping(value = "/input", method = RequestMethod.GET)
-	public String input(Model model) {
+      List<BookVO> bookList = bookDao.selectAll();
+      model.addAttribute("BOOKS", bookList);
+      model.addAttribute("BODY", "BOOK-LIST");
+      return "home";
+   }
 
-		LocalDate localDate = LocalDate.now();
-		String todayString = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(localDate);
-		BookVO bookVO = BookVO.builder().buydate(todayString).build();
+   @RequestMapping(value = "/input", method = RequestMethod.GET)
+   public String input(Model model) {
 
-		model.addAttribute("BODY", "BOOK-WRITE");
-		model.addAttribute("bookVO", bookVO);
-		return "home";
+      LocalDate localDate = LocalDate.now();
+      String todayString = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(localDate);
 
-		// Controller의 Mapping method의 return type이 String일때
-		// null 값을 return 하면
-		// method를 호출할때 사용했던 mapping URL.jsp 형식의 return문이
-		// 자동으로 생성된다.
-		// return null
-	}
+      BookVO bookVO = BookVO.builder().buydate(todayString).build();
+      model.addAttribute("BODY", "BOOK-WRITE");
+      model.addAttribute("bookVO", bookVO);
+      return "home";
 
-	/*
-	 * spring form taglib를 사용하여 write form을 만들었을 경우에는 VO클래스, 객체를 매개변수로 사용할때
-	 * 
-	 * @@ModelAttribute("VO") 를 필수로 사용하자
-	 */
-	@RequestMapping(value = "/input", method = RequestMethod.POST)
-	public String input(@ModelAttribute("bookVO") BookVO bookVO) {
+      // Controller의 Mapping method의 return type이 String일때
+      // null 값을 return 하면
+      // method를 호출할때 사용했던 mapping URL.jsp 형식의 return문이
+      // 자동으로 생성된다.
+      // return null
+   }
 
-		log.debug(bookVO.toString());
+   /*
+    * spring form taglib를 사용하여 write form을 만들었을 경우에는 VO 클래스, 객체를 매개변수로 사용할때
+    * 
+    * @ModelAttribbute("VO") 를 필수로 사용하자
+    */
+   @RequestMapping(value = "/input", method = RequestMethod.POST) // submit 했을때 보여주는 방식
+   public String input(@ModelAttribute("bookVO") BookVO bookVO) {
 
-		int ret = bookDao.insert(bookVO);
-		if (ret < 1) {
-			// insert가 실패앴으므로 그에 대한 메시지를 보여주는 페이지로 Jump
-		}
+      log.debug(bookVO.toString());
 
-		return "redirect:/books";
+      int ret = bookDao.insert(bookVO);
+      if (ret < 1) {
+         // insert가 실패했으므로 그에 대한 메시지를 보여주는 페이지로 Jump
+      }
+      return "redirect:/books";
 
-	}
-<<<<<<< HEAD
-	
-	// localhost:8080/book/books/detail/3 이라고 Request가 오면
-	// 맨 끝의 숫자 3을 Mapping 주소의 {book_seq}위치에 Mapping한다
-	// 매개변수에 설정된 PathVariable에 따라 String id 변수에
-	// 3의 값이 할당되어 method에 전달된다
-	
-=======
-	
-	// localhost:8080/book/books/detail/3 이라고 Request가 오면
-	// 맨 끝의 숫자 3을 Mapping 주소의 {book_seq}위치에 Mapping한다
-	// 매개변수에 설정된 PathVariable에 따라 String id 변수에
-	// 3의 값이 할당되어 method에 전달된다
-	
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
-	@RequestMapping(value="/detail/{book_seq}" ,method=RequestMethod.GET,produces = "application/json;charset=utf8" )
-	   public String detail(
-	         @PathVariable("book_seq") String id, Model model) {
-	      
-	      log.debug("PATH : {}",id);
-	      long seq = Long.valueOf(id);
-	      BookVO bookVO = bookDao.findById(seq);
-	      // log.debug(bookVO.toString());
-<<<<<<< HEAD
-	      
-	      model.addAttribute("BOOKVO",bookVO);
-=======
-	      model.addAttribute("BOOKVO",bookVO);
-	      
-	      LocalDateTime lDateTime = LocalDateTime.now();
-	      String lDate = DateTimeFormatter.ofPattern("yyyy-MM-dd").format(lDateTime);
-	      String lTime = DateTimeFormatter.ofPattern("HH:mm:SS").format(lDateTime);
-	      
-	      ReadBookVO readBookVO = ReadBookVO.builder()
-	    		  .r_date(lDate)
-	    		  .r_stime(lTime)
-	    		  .build();
-	      model.addAttribute("readBookVO",readBookVO);
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
-	      model.addAttribute("BODY","BOOK-DETAIL");
-	      return "home" ;
-	      
-	   }
+   }
 
-<<<<<<< HEAD
+   // localhost:8080/book/books/detail/3 이라고 Request가 오면
+   // 맨 끝의 숫자 3을 Mapping 주소의 {book_seq} 위에 Mapping 한다
+   // 매개변수에 설정된 PathVariable에 따라 String id 변수에
+   // 3의 값이 할당되어 method에 전달된다.
+   @RequestMapping(value="/detail/{book_seq}" ,method=RequestMethod.GET,produces = "application/json;charset=utf8" )
+   public String detail(
+         @PathVariable("book_seq") String id, Model model) {
+      
+      log.debug("PATH : {}",id);
+      long seq = Long.valueOf(id);
+      BookVO bookVO = bookDao.findById(seq);
+      // log.debug(bookVO.toString());
+      
+      model.addAttribute("BOOKVO",bookVO);
+      
+      LocalDateTime lDateTime = LocalDateTime.now();
+      String lDate = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            .format(lDateTime);
+      String lTime = DateTimeFormatter
+            .ofPattern("HH:mm:SS")
+            .format(lDateTime);
+    
+      
+
+      
+      ReadBookVO readBookVO = ReadBookVO.builder()
+               .r_date(lDate)
+               .r_stime(lTime)
+               .build();
+      
+      model.addAttribute("readBookVO",readBookVO );
+      model.addAttribute("BODY","BOOK-DETAIL");
+      return "home" ;
+      
+   }
+
 }
-=======
-}
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8

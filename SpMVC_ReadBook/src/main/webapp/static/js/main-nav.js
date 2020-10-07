@@ -30,14 +30,8 @@ $(function () {
       document.location.href = `${rootPath}/read/`;
     } else if (menu_id === "menu-join") {
       document.location.href = `${rootPath}/member/join`;
-<<<<<<< HEAD
-    }
-  });
-});
-=======
     } else if (menu_id === "menu-logout") {
       document.location.href = `${rootPath}/member/logout`;
     }
   });
 });
->>>>>>> b5f9a619524354a73346db20cb1209b68e3c08d8
