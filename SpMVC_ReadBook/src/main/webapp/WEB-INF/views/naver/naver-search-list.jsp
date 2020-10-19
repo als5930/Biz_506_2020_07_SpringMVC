@@ -79,7 +79,7 @@
 	<c:forEach items="${NAVERS}" var = "naver">
 		<div data-isbn="${naver.isbn}" class="book-select">
 			<h3>${naver.title}</h3>
-			<a href="${naver.link}" target=_new>
+			<a href="${naver.link}"w target=_ne>
 				<c:if test="${naver.image == 'noImage' }">
 					<img src="${rootPath}/resources/images/noImage.png" 
 							width="50px">
