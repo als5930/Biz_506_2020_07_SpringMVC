@@ -11,11 +11,11 @@ import com.biz.bbs.sql.BbsSQL;
 
 public interface BBsDao {
 	
-	@Select("SELECT * FROM tbl_bbs")
+	@Select("SELECT * FROM tbl_bbs ORDER BY b_seq DESC")
 	public List<BBsVO> selectAll();
 	
 	@Select("SELECT * FROM tbl_bbs WHERE b_seq =#{seq}")
-	public BBsVO findBySeq();
+	public BBsVO findBySeq(long seq);
 	
 	@InsertProvider(type=BbsSQL.class,method="bbs_insert")
 	public int insert(BBsVO bbsVO);
