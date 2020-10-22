@@ -18,7 +18,7 @@ public class BBsVO {
 	private String b_writer;
 	private String b_subject;
 	private String b_content;
-	private String b_count;
+	private int b_count;
 	private String b_file;
 
 
