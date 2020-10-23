@@ -47,6 +47,9 @@ public class FileServiceImplV4 extends FileServiceImplV1{
 	@Override
 	public String fileUp(MultipartFile file) {
 	
+		if(file == null) {
+			return null;
+		}
 		
 		File dir = new File(rootFolder);
 		
