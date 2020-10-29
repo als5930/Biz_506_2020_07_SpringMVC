@@ -14,9 +14,6 @@ public class EmsServiceImpel implements EmsService{
 	@Autowired
 	private EmsDao emsDao;
 	
-	@Autowired
-	private NaverMailSendService naverMail;
-	
 	@Override
 	public List<EmsVO> seleAll() {
 		
@@ -34,8 +31,6 @@ public class EmsServiceImpel implements EmsService{
 
 	@Override
 	public int insert(EmsVO emsVO) {
-		
-		naverMail.sendMail(emsVO);
 		
 		int ret = emsDao.insert(emsVO);
 		
