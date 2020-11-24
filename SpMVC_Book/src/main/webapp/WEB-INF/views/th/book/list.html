@@ -1,0 +1,63 @@
+<th:block th:include="header" />
+<style>
+button {
+	display: flex;
+	margin: 0;
+	border: none;
+	float: right;
+
+}
+
+button.btn-save {
+	display: inline-block;
+	text-decoration: none;
+	padding: 8px 15px;
+	background-color: orange;
+	color: white;
+	border-radius: 5px;
+}
+
+.btn-save a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 3px 5px;
+	background-color: orange;
+	color: white;
+	border-radius: 5px;
+}
+
+.btn-save-btn:hover a {
+	background-color: red;
+	text-decoration: inherit;
+}
+
+</style>
+<body class="book-list">
+	<table class="table">
+		<tr>
+			<th>No</th>
+			<th>도서명</th>
+			<th>저자</th>
+			<th>출판사</th>
+			<th>가격</th>
+		</tr>
+		<tr th:each="book : ${BOOKS}" th:object="${book}">
+			<td th:text="${bookStat.count}">No</td>
+			<td><a th:href="@{/book/view(id=${book.id})}" th:text="*{title}" />
+
+				</a></td>
+			<td th:text="*{author}">저자</td>
+			<td th:text="*{comp}">출판사</td>
+			<td th:text="*{price}">가격</td>
+		</tr>
+	</table>
+
+
+	<button class="btn-save">
+		<a th:href="@{/book/insert}">추가</a>
+	</button>
+	<th:block th:include="pagination" />
+	<th:block th:include="footer"/>
+</body>
+
+
