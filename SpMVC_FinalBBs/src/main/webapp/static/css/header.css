@@ -1,0 +1,32 @@
+@charset "UTF-8";
+* {
+ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+
+  position: relative;
+
+  height: 400px;
+  color: white;
+  background-image: url("../images/53.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 500;
+  color: white;
+  text-shadow: -1px 0 rgb(5, 245, 245), 0 1px rgb(198, 0, 248),
+    0 1px rgb(0, 232, 248), 0 -1px rgb(13, 235, 243);
+}
