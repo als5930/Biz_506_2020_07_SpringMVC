@@ -16,17 +16,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.biz.data.config.DataGoConfig;
-import com.biz.data.model.GoPetVO;
-import com.biz.data.model.RfcOpenAPI;
+import com.biz.data.model.pet.GoPetVO;
+import com.biz.data.model.pet.RfcOpenAPI;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class PetServiceImplV1 {
+public class PetServiceImplV1 implements PetService{
 	
 
-		public List<GoPetVO> getHosp(String hosp){
+		public List<GoPetVO> getHosp(String cat, String search){
 			
 		
 		
@@ -37,8 +37,12 @@ public class PetServiceImplV1 {
 		queryString += "&numOfRows=100";
 		
 		try {
-		if(!hosp.isEmpty()) {
-			queryString += "&dongName="+ URLEncoder.encode(hosp,"UTF-8");
+		if(!search.isEmpty()) {
+			if(cat.equalsIgnoreCase("HOSP")) {
+				queryString += "&dongName="+ URLEncoder.encode(search,"UTF-8");
+			}else {
+				queryString += "&address="+ URLEncoder.encode(search,"UTF-8");
+			}
 		}
 		}catch (UnsupportedEncodingException e1) {
 			// TODO: handle exception

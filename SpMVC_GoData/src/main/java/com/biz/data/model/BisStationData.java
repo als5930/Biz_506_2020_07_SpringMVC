@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class BisStation {
+public class BisStationData {
 	
 	
 	//"STATION_LIST":
@@ -30,5 +30,8 @@ public class BisStation {
 	private String ARS_ID;
 	private String NEXT_BUSSTOP;
 	private String BUSSTOP_ID;
+	private String LONGITUDE;
+	private String NAME_E;
+	private String LATITUDE;
 
 }

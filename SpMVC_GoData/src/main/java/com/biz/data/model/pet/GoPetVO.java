@@ -1,4 +1,4 @@
-package com.biz.data.model;
+package com.biz.data.model.pet;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -13,7 +13,6 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement(name = "list")
 public class GoPetVO {
 	
 	
