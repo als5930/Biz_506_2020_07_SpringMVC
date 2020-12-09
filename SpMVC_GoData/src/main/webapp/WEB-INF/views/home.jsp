@@ -19,6 +19,22 @@
 		menu_station.onclick= function(){
 			document.location.href="${rootPath}/bis/station"
 		}
+		const select_cat = document.querySelector("select[name='cat']")
+		// select input box의 change 이벤트를 설정하기
+		select_cat.onchange = function(e){
+			// change 이벤트가 발생하면 value값을 추출하고
+			const value=e.target.value
+			// value값이 hosp이면 
+			if(value === 'hosp'){
+				// input box의 placeholder를 변경
+				document.querySelector("input[name='search']")
+				.placeholder = '병원명 입력후 Enter...'
+			} else{
+				document.querySelector("input[name='search']")
+				.placeholder = '주소 입력후 Enter...'
+			}
+			
+		}
 	})
 
 </script>
@@ -35,21 +51,24 @@
 				<option value="hosp">병원명</option>
 				<option value="addr">주소</option>
 			</select>
-		<input name="search" type="search" placeholder="동물병원 이름을 입력한 후 Enter">
+		<input name="search" type="search" placeholder="동물병원 이름을 입력한 후 Enter"/>
 		</form>
 		</li>
-		<li><input></li>
+		<li>
+			<form action="${rootPath}/bis/station">
+			<input name="station" placeholder="정류소 입력후 Enter...">
+			</form>
+		</li>
 		<li class="get-station">노선정보가져오기</li>		
 	</ul>
 
 </nav>
 <section>
 	<c:if test="${BODY == 'PET' }">
-		<%@ include file="/WEB-INF/views/pet_view.jsp" %>	
+		<%@ include file="/WEB-INF/views/pet_view.jsp"  %>
 	</c:if>
-	
-		<c:if test="${BODY == 'BBS' }">
-		<%@ include file="/WEB-INF/views/bis_view.jsp" %>	
+	<c:if test="${BODY == 'STATION' }">
+		<%@ include file="/WEB-INF/views/station_view.jsp"  %>
 	</c:if>
 </section>
 </body>

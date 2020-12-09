@@ -21,7 +21,7 @@
 	table.hosp-list tr:nth-child(odd) {
 	background-color: #fff;
 }
-	table.hosp-list tr:hover{
+	table.hosp-list tr:nth-child(n+2):hover{
 		background-color: #ddd;
 		cursor: pointer;
 	}

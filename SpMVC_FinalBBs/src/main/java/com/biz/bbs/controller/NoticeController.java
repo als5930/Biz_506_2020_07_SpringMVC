@@ -52,7 +52,7 @@ public class NoticeController {
 
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
-	public String detail(@RequestParam("id") String id, Model model) {
+	public String detail(@RequestParam("seq") String id, Model model) {
 
 		long long_id = Long.valueOf(id);
 		NoticeVO noVO = noService.findBySeq(long_id);
