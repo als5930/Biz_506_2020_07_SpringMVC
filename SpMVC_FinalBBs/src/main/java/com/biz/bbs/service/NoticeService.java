@@ -1,6 +1,9 @@
 package com.biz.bbs.service;
 
+import java.awt.print.Pageable;
 import java.util.List;
+
+
 
 import com.biz.bbs.model.NoticeVO;
 
@@ -12,7 +15,7 @@ public interface NoticeService {
 	public int insert(NoticeVO emVO);
 	public int update (NoticeVO emVO);
 	public int delete(long long_id);
-
+	
 
 	
 	
